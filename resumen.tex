@@ -15,6 +15,7 @@
 
 \theoremstyle{plain}
 \newtheorem{teo}{Teorema}
+\newtheorem{demo}{Demostración}[teo]
 \newtheorem{col}{Colonario}
 \newtheorem{obs}{Observación}
 \begin{document}
@@ -23,11 +24,13 @@
 
 \part{Números Enteros}
 
+\section{Introducción}
+
 \begin{defi} Los números naturales son un conjunto con una {\bfseries función  sucesor} que satisface los siguientes axiomas: \end{defi}
 
 \begin{axi} \label{natual1}1 es un número Natural. \end{axi}
-\begin{axi} Todo número tiene un sucesor\end{axi}
-\begin{axi} La función sucesor es injectiva ($\forall x \forall y, suc(x) \neq suc(y)$ si $x \neq y$)\end{axi}
+\begin{axi} \label{suc}Todo número tiene un sucesor\end{axi}
+\begin{axi} \label{sucind}La función sucesor es injectiva ($\forall x \forall y, suc(x) \neq suc(y)$ si $x \neq y$)\end{axi}
 \begin{axi} \label{primer1}El 1 no es sucesor de nadie\end{axi}
 \begin{axi} \label{cnmp}si $S$ es un conjunt con una función sucesor, $1 \in S$ y satisface los axiomas \ref{natural1}-\ref{primer1} entonces es un conjunto natural\end{axi}
 
@@ -37,6 +40,42 @@ Por el axioma \ref{cnmp} podemos ver que el conjunto de los naturales es el conj
 \begin{equation*}
 \underbrace{|\mathbb{N}\cup\{\dots;\frac{-3}{2};\frac{-2}{2};\frac{-1}{2};\frac{1}{2};\frac{2}{2};\frac{3}{2};\dots\}}_\text{Satisface A\ref{natural1}-A\ref{primer1} pero no A\ref{cnmp}}|>|\mathbb{N}|
 \end{equation*}
+\end{obs}
+
+\section{Aritmética}
+
+En esta sección daremos definición a las diferentes operaciónes aritméticas y sus diferentes propiedades.
+
+Para definir la suma damos uso del principio de inducción (definición \ref{defindux}) para definirla en $\mathbb{N}$
+
+\begin{defi} \label{defsuma} 
+\begin{align*}
+\text{suma}(m,n) &\doteq \text{ si } n=1, \text{suc}(m) \\
+                 &\doteq \text{ si no } n = \text{suc}(n-1) \implies \text{suma}(m,n-1)                
+\end{align*}
+\end{defi}
+
+\begin{defi}\label{defmq} si $m,n\in\mathbb{N}$, decimos que $n<m$ si $\exists J\in\mathbb{N}$ tal que $m=n+J$\end{defi}
+
+\begin{teo} si $m,n\in\mathbb{N}$, entonces $n>m, n<m$ ó $m\neq$\end{teo}
+
+\begin{demo}
+TODO (absurdo)
+\end{demo}
+
+Para definir el producto damos uso tambien de una definición recursiva
+
+\begin{defi} \label{defprod}
+\begin{align*}
+\text{prod}(m,n) &\doteq \text{si } n=1    \implies \text{prod}(m,1)=m \\
+                 &\doteq \text{si } n\neq1 \implies \text{prod}(m,n)=\text{prod}(m,n-1)+m
+\end{align*}
+\end{defi}
+
+\begin{obs}
+Al definir así podesmo ver tambien que:\\
+prod$(m,n)=$ prod$(m,n-1)+m$\\
+Por ende la propiedad distributiva
 \end{obs}
 
 \part{Conteo}
