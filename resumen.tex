@@ -3,17 +3,20 @@
 
 \usepackage[utf8]{inputenc}
 \usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{amsfonts}
 
 \title{Resumen matemática discreta 1}
 \author{Andrés Villagra de la Fuente - {\bfseries  andres.villagra(at)alumnos.unc.edu.ar}}
 
-\theoremstyle{plain}
+\theoremstyle{definition}
 \newtheorem{defi}{Definicion}
 \newtheorem{axi}{Axioma}
 
 \theoremstyle{plain}
 \newtheorem{teo}{Teorema}
-
+\newtheorem{col}{Colonario}
+\newtheorem{obs}{Observación}
 \begin{document}
 
 \maketitle
@@ -26,8 +29,15 @@
 \begin{axi} Todo número tiene un sucesor\end{axi}
 \begin{axi} La función sucesor es injectiva ($\forall x \forall y, suc(x) \neq suc(y)$ si $x \neq y$)\end{axi}
 \begin{axi} \label{primer1}El 1 no es sucesor de nadie\end{axi}
-\begin{axi} si $S$ es un conjunt con una función sucesor, $1 \in S$ y satisface los axiomas \ref{natural1}-\ref{primer1} entonces es un conjunto natural\end{axi}
+\begin{axi} \label{cnmp}si $S$ es un conjunt con una función sucesor, $1 \in S$ y satisface los axiomas \ref{natural1}-\ref{primer1} entonces es un conjunto natural\end{axi}
 
+Por el axioma \ref{cnmp} podemos ver que el conjunto de los naturales es el conjunto de números mas pequeño con estás propiedades.
+
+\begin{obs}
+\begin{equation*}
+\underbrace{|\mathbb{N}\cup\{\dots;\frac{-3}{2};\frac{-2}{2};\frac{-1}{2};\frac{1}{2};\frac{2}{2};\frac{3}{2};\dots\}}_\text{Satisface A\ref{natural1}-A\ref{primer1} pero no A\ref{cnmp}}|>|\mathbb{N}|
+\end{equation*}
+\end{obs}
 
 \part{Conteo}
 
