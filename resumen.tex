@@ -1,9 +1,18 @@
 \documentclass[9pt,a4paper]{article}
 
+
 \usepackage[utf8]{inputenc}
+\usepackage{amsthm}
 
 \title{Resumen matemática discreta 1}
 \author{Andrés Villagra de la Fuente - {\bfseries  andres.villagra(at)alumnos.unc.edu.ar}}
+
+\theoremstyle{plain}
+\newtheorem{defi}{Definicion}
+\newtheorem{axi}{Axioma}
+
+\theoremstyle{plain}
+\newtheorem{teo}{Teorema}
 
 \begin{document}
 
@@ -11,7 +20,17 @@
 
 \part{Números Enteros}
 
+\begin{defi} Los números naturales son un conjunto con una {\bfseries función  sucesor} que satisface los siguientes axiomas: \end{defi}
+
+\begin{axi} \label{natual1}1 es un número Natural. \end{axi}
+\begin{axi} Todo número tiene un sucesor\end{axi}
+\begin{axi} La función sucesor es injectiva ($\forall x \forall y, suc(x) \neq suc(y)$ si $x \neq y$)\end{axi}
+\begin{axi} \label{primer1}El 1 no es sucesor de nadie\end{axi}
+\begin{axi} si $S$ es un conjunt con una función sucesor, $1 \in S$ y satisface los axiomas \ref{natural1}-\ref{primer1} entonces es un conjunto natural\end{axi}
+
+
 \part{Conteo}
+
 
 \part{Divisibilidad}
 
