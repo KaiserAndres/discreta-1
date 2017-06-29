@@ -10,7 +10,7 @@
 \author{Andrés Villagra de la Fuente - {\bfseries  andres.villagra(at)alumnos.unc.edu.ar}}
 
 \theoremstyle{definition}
-\newtheorem{defi}{Definicion}
+\newtheorem{defi}{Definición}
 \newtheorem{axi}{Axioma}
 
 \theoremstyle{plain}
@@ -51,7 +51,7 @@ Para definir la suma damos uso del principio de inducción (definición \ref{def
 \begin{defi} \label{defsuma} 
 \begin{align*}
 \text{suma}(m,n) &\doteq \text{ si } n=1, \text{suc}(m) \\
-                 &\doteq \text{ si no } n = \text{suc}(n-1) \implies \text{suma}(m,n-1)                
+                 &\doteq \text{ si no } n = \text{suc}(n-1) \implies \text{suma}(\text{suc}(m),n-1)                
 \end{align*}
 \end{defi}
 
@@ -71,7 +71,7 @@ Para definir la suma damos uso del principio de inducción (definición \ref{def
 
 \end{demo}
 
-Para definir el producto damos uso tambien de una definición recursiva
+Para definir el producto damos uso tambien de una definición recursiva.
 
 \begin{defi} \label{defprod}
 \begin{align*}
@@ -84,6 +84,13 @@ Para definir el producto damos uso tambien de una definición recursiva
 Al definir así podesmo ver tambien que:\\
 prod$(m,n)=$ prod$(m,n-1)+m$\\
 Por ende la propiedad distributiva
+\begin{align*}
+prod(a,suma(b,c))=&suma(prod(a,b),prod(a,c))\\
+&a+prod(a,suma(b,c)-1)\\
+&\text{por siguiente}\\
+&prod(a,b)+prod(a,sum(b,c)-b)\\
+&prod(a,b)+prod(a,c)
+\end{align*}
 \end{obs}
 
 \part{Conteo}
