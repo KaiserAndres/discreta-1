@@ -57,10 +57,18 @@ Para definir la suma damos uso del principio de inducción (definición \ref{def
 
 \begin{defi}\label{defmq} si $m,n\in\mathbb{N}$, decimos que $n<m$ si $\exists J\in\mathbb{N}$ tal que $m=n+J$\end{defi}
 
-\begin{teo} si $m,n\in\mathbb{N}$, entonces $n>m, n<m$ ó $m\neq$\end{teo}
+\begin{teo} si $m,n\in\mathbb{N}$, entonces $n>m \lor n<m \implies m\neq n$\end{teo}
 
 \begin{demo}
-TODO (absurdo)
+
+\begin{align*}
+\text{Si }& m<n \land m=n; m,n \in{\mathbb{N}} \\
+          & \exists L \text{ tal que } n=m+L   \\
+          & \text{Ya que } m=n \implies L=0    \\
+	  & L\notin\mathbb{N}                  \\           
+	  & \text{Absurdo.}
+\end{align*}
+
 \end{demo}
 
 Para definir el producto damos uso tambien de una definición recursiva
