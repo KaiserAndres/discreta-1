@@ -12,6 +12,7 @@
 \theoremstyle{definition}
 \newtheorem{defi}{Definición}
 \newtheorem{axi}{Axioma}
+\newtheorem{lema}{Lema}
 
 \theoremstyle{plain}
 \newtheorem{teo}{Teorema}
@@ -92,6 +93,53 @@ prod(a,suma(b,c))=&suma(prod(a,b),prod(a,c))\\
 &prod(a,b)+prod(a,c)
 \end{align*}
 \end{obs}
+
+\begin{lema}
+Si $m,n,l\in\mathbb{N}$, tal que $l<m\land m<n\implies l<n$ (transitiva)
+
+\begin{align*}
+& m = a+l   & a\in\mathbb{N} \\
+& n = b+m   & b\in\mathbb{N} \\
+& n = \underbrace{b+a}_{\in{\mathbb{N}}}+l \implies n<l
+\end{align*}
+\end{lema}
+
+\section{inducción}
+
+\begin{axi}\label{defindN} Principio de inducción\\
+Suponiendo que $\forall x\in{\mathbb{N}}$ tenemos una afirmación $P(x)$, y queremos provar su veracidad.\\
+Si valen:\\
+$1^{er}$ caso: $P(1)$ es verdadera
+Paso Inductivo: si $P(x)$ es verdadera $\implies P(x+1)$ tambien debe ser verdadera $\forall x\in{\mathbb{N}}$
+\end{axi}
+
+El principio de inducción nos permite demostrar que una proposición es valida en todo el conjunto de $\mathbb{N}$, además podemos comprobar una proposición en $\mathbb{Z}$ (ver teo. \ref{defindZ})
+
+\begin{defi} Sucesiones recursivas:\\
+Dado $(a_n), n\in\mathbb{N}$ una sucesión de números.\\
+$$S_k = \sum_{i=1}^{k}a_i = a_1 + a_2 + \dots + a_k \forall k\in{\mathbb{N}}$$
+\end{defi}
+
+Un ejemplo de definición de sucesión recursiva
+
+\begin{align*}
+S_1 = & a_1 \\
+S_k = & S_{k-1} + a_k & k>1
+\end{align*}
+
+Afirmo que está bien definida:\\
+
+$$S=\{k\in{\mathbb{N}}: S_k \text{ esta bien definida}\}$$
+
+Quiero probar que $S=\mathbb{N}$
+
+\begin{align*}
+& 1 \in S \\
+& \text{Si } k\in{S}\implies k+1\in{S}\\
+& \underbrace{\mathbb{N}\subseteq S \subseteq\mathbb{N}}_{\text{Por el A\ref{cnmp}}\implies S=\mathbb{N}}
+\end{align*}
+
+\begin{defi} Inducción corrida \\ {\bfseries TODO}  \end{defi}
 
 \part{Conteo}
 
