@@ -173,6 +173,30 @@ $(\mathbb{N}, \bullet)$ vale:
 \begin{align*} & 1*l=l & \forall l\in{\mathbb{N}} \end{align*}
 \end{teo}
 
+Todos estos teoremas se pueden demostrar usando {\itshape inducción en $\mathbb{N}$} 
+
+\begin{demo}
+\begin{align*}
+P(1):\\
+(l+m)+1 & = l+(m+1) \\
+        & = \text{suma}(l,m+1) \\
+        & = \text{suc}(\text{suma}(l,+m)) \\
+        & = \text{suma}(l,m)+1 \\
+        & = (l+m+1) 
+\end{align*}
+
+Ahora demostramos para $n+1$
+
+\begin{align*}
+P(n+1): \\
+l+(m+(n+1)) & = l+\text{suma}(m, n+1) \\
+            & = l+\text{suc}(\text{suma}/(m,n)) \\
+            & = \text{suc}(l+\text{suma}(m,n)) \\
+            & = \text{suc}(l+m+n) \\
+            & = \text{suc}((l+m)+n) \\
+            & = (l+m)+(n+1)
+\end{align*}
+\end{demo}
 TODO: demostrar estos teoremas.
 \part{Conteo}
 
