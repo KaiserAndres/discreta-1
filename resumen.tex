@@ -81,7 +81,7 @@ Para definir el producto damos uso tambien de una definición recursiva.
 \end{align*}
 \end{defi}
 
-\begin{obs}
+\begin{obs} \label{obsdist}
 Al definir así podesmo ver tambien que:\\
 prod$(m,n)=$ prod$(m,n-1)+m$\\
 Por ende la propiedad distributiva
@@ -151,44 +151,27 @@ $(\mathbb{N}, +, \bullet)$ es un {\itshape trinoide} y satisface las siguientes 
 
 $(\mathbb{N}, +)$ vale:
 
-\begin{teo} Es asociativo:\\
+\begin{teo} \label{teoasosum}Es asociativo:\\
 \begin{align*} & (a+b)+c=a+(b+c) & \forall a,b,c\in{\mathbb{N}} \end{align*}
 \end{teo}
 
-\begin{teo} Es conmutativa:\\
-\begin{align*} & m+n=n+m & \forall m,n\in{\mathbb{N}} \end{align*}
-\end{teo}
+\begin{demo} Tomamos como hipótesis inductiva que:
 
-$(\mathbb{N}, \bullet)$ vale:
+\begin{align*} & (l+m)+n=l+(m+n) & \forall l,m\in{\mathbb{N}}\end{align*}
 
-\begin{teo} Es asociativa:\\
-\begin{align*} & l*(m*n)=(l*m)*n & \forall l,m,n\in{\mathbb{N}} \end{align*}
-\end{teo}
-
-\begin{teo} Es conmutativo:\\
-\begin{align*} & l*m=m*l & \forall l,m\in{\mathbb{N}} \end{align*}
-\end{teo}
-
-\begin{teo} Existe el elemento neutro:\\
-\begin{align*} & 1*l=l & \forall l\in{\mathbb{N}} \end{align*}
-\end{teo}
-
-Todos estos teoremas se pueden demostrar usando {\itshape inducción en $\mathbb{N}$} 
-
-\begin{demo}
+$P(1):$
 \begin{align*}
-P(1):\\
-(l+m)+1 & = l+(m+1) \\
+(l+m)+1 & = l+(m+1)
         & = \text{suma}(l,m+1) \\
         & = \text{suc}(\text{suma}(l,+m)) \\
         & = \text{suma}(l,m)+1 \\
-        & = (l+m+1) 
+        & = (l+m)+1 
 \end{align*}
 
 Ahora demostramos para $n+1$
 
+$P(n+1):$
 \begin{align*}
-P(n+1): \\
 l+(m+(n+1)) & = l+\text{suma}(m, n+1) \\
             & = l+\text{suc}(\text{suma}/(m,n)) \\
             & = \text{suc}(l+\text{suma}(m,n)) \\
@@ -197,6 +180,101 @@ l+(m+(n+1)) & = l+\text{suma}(m, n+1) \\
             & = (l+m)+(n+1)
 \end{align*}
 \end{demo}
+
+\begin{teo} \label{teoconmusum} Es conmutativa:\\
+\begin{align*} & m+n=n+m & \forall m,n\in{\mathbb{N}} \end{align*}
+\end{teo}
+
+\begin{demo}
+
+Al igual que la anterior daremos uso de una demostración por inducción, con la siguiente hipótesis inductiva:\\
+
+$$m+n=n+m$$
+
+$P(1)$
+
+\begin{align*}
+m+1       &= 1+m\\
+suma(m,1) &= suma(1,m)\\
+suc(m)    &= suma(1,m)\\
+suc(m)    &= suma(suc(1), m-1)\\
+\text{siguiendo por $m-1$ pasos}\\
+          & \vdots\\
+suc(m)    &= suma(m, 1)\\
+suc(m)    &= suc(m)
+\end{align*}
+
+$P(n+1)$
+
+\begin{align*}
+m+(n+1)         &= (n+1)+m\\
+suma(m,n+1)     &= suma(n+1,m)\\
+suma(m, suc(n)) &= suma(suc(n), m)\\
+suc(suma(m,n))  &= suma(m,suc(n)) \text{ Por el T\ref{teoasosum}}\\
+suc(suma(m,n))  &= suc(suma(m,n))
+\end{align*}
+\end{demo}
+
+$(\mathbb{N}, \bullet)$ vale:
+
+\begin{teo} \label{teoasopro}Es asociativa:\\
+\begin{align*} & l*(m*n)=(l*m)*n & \forall l,m,n\in{\mathbb{N}} \end{align*}
+\end{teo}
+
+\begin{demo}
+Para demostrar esto daremos uso de la Obs.\ref{obsdist} y de la siguiente hipótesis inductiva:\\
+
+$$l*(m*n)=(l*m)*n$$
+
+$P(1)$
+\begin{align*}
+l*(m*1) &= (l*m)*1\\
+prod(l,prod(m,1)) &= prod(prod(l,m), 1)\\
+prod(l,m) &= prod(l,m)
+\end{align*}
+
+$P(n+1)$
+
+\begin{align*}
+l*(m*(n+1)) = (l*m)*(n+1)\\
+A := l*(m*(n+1))\\
+B := (l*m)*(n+1)\\
+\end{align*}
+A)
+\begin{align*}
+l*&(m*(n+1))\\
+prod&(l,prod(m,n+1))\\
+prod&(l,prod(m,suma(n,1)))\\
+\text{Por uso de la Obs.\ref{obsdist}}\\
+prod&(l, prod(m,n)+prod(m,1))\\
+prod&(l, suma(prod(m,n),m))\\
+\text{Por uso de la Obs.\ref{obsdist}}\\
+A := suma&(prod(l, prod(m,n)),prod(l,m))
+\end{align*}
+B)
+\begin{align*}
+(l*m)*&(n+1)\\
+prod&(prod(l,m),suma(n,1))\\
+\text{Por uso de la Obs.\ref{obsdist}}\\
+suma&(prod(prod(l,m),n),prod(prod(l,m),1))\\
+B := suma&(prod(prod(l,m),n),prod(l,m))\\
+\end{align*}
+\begin{align*}
+A &= B\\
+suma(prod(l, prod(m,n)),prod(l,m)) &= suma(prod(l, prod(m,n)),prod(l,m))
+\end{align*}
+\end{demo}
+
+\begin{teo} \label{teomonpro}Es conmutativo:\\
+\begin{align*} & l*m=m*l & \forall l,m\in{\mathbb{N}} \end{align*}
+\end{teo}
+
+\begin{teo} \label{teoelneu}Existe el elemento neutro:\\
+\begin{align*} & 1*l=l & \forall l\in{\mathbb{N}} \end{align*}
+\end{teo}
+
+Todos estos teoremas se pueden demostrar usando {\itshape inducción en $\mathbb{N}$} 
+
 TODO: demostrar estos teoremas.
 \part{Conteo}
 
