@@ -198,7 +198,7 @@ m+1       &= 1+m\\
 suma(m,1) &= suma(1,m)\\
 suc(m)    &= suma(1,m)\\
 suc(m)    &= suma(suc(1), m-1)\\
-\text{siguiendo por $m-1$ pasos}\\
+\text{siguiendo por $m-2$ pasos}\\
           & \vdots\\
 suc(m)    &= suma(m, 1)\\
 suc(m)    &= suc(m)
@@ -276,6 +276,24 @@ suma(prod(l, prod(m,n)),prod(l,m)) &= suma(prod(l, prod(m,n)),prod(l,m))
 Todos estos teoremas se pueden demostrar usando {\itshape inducción en $\mathbb{N}$} 
 
 TODO: demostrar estos teoremas.
+
+\section{Inducción fuerte}
+
+La inducción fuerte o completa es una forma de inducción que, como el nombre indica, da uso de una hipótesis mas fuerte. Mientras que la inducción debil toma como hipótesis que si $P(1)$ y $P(n+1)$ son verdaderas entonces $P$ es verdadero $\forall{n}\in{\mathbb{N}}$, la inducción fuerte toma que:\\
+
+\begin{defi} Si $P(n)$ es verdadero $\forall{n} {1}\leq{n}\leq{k}$ y también $P(n+1)$ es verdadero $\forall n>k$, entonces $P$ es verdadero.\end{defi}
+
+\begin{teo} Principio del buen orden\\
+
+Si $A \subseteq \mathbb{N}, A \neq \emptyset$, entonces $A$ tiene primer elemento. (minimo)
+\end{teo}
+
+\begin{demo} Suponemos que $k\in{A}, {1}\leq{k}\leq{n}$, entonces $A$ tiene primer elemento, y veamos que si $(n+1)\in{A}$, $A$ tiene primer elemento.\\
+
+Casos:\\
+1) Si $1\notin{A}, \land \dots \land n\notin{A} \implies A$ tiene primer elemento al saber $n+1$\\
+2) Si hay un $k\in{\mathbb{N}}, 1\leq{k}\leq{n}, k\in{A} \implies P(k)\text{ si } k\in{A}, A$ tiene primer elemento por hipótesis inductiva.
+\end{demo}
 \part{Conteo}
 
 \part{Divisibilidad}
