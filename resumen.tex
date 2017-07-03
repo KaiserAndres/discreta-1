@@ -294,6 +294,44 @@ Casos:\\
 1) Si $1\notin{A}, \land \dots \land n\notin{A} \implies A$ tiene primer elemento al saber $n+1$\\
 2) Si hay un $k\in{\mathbb{N}}, 1\leq{k}\leq{n}, k\in{A} \implies P(k)\text{ si } k\in{A}, A$ tiene primer elemento por hipótesis inductiva.
 \end{demo}
+
+\section{El conjunto de $\mathbb{Z}$}
+
+\begin{defi} El conjunto de los enteros está definido como:\\
+$$\mathbb{Z}:= \mathbb{N}\cup{\{0\}\cup{-\mathbb{N}}}$$\end{defi}
+
+Este conjunto opera de manera similar al de los naturales, especialemte en operaciónes donde ambas partes pertenecen a $\mathbb{N}$, sin embargo al trabajar con elementos que no esten en $\mathbb{N}$ estas operaciónes deben redefinirse, esto nos ofrece eliminar ciertas limitaciones expandiendo el conjunto de operaciónes posibles para el conjunto.
+
+\begin{defi} $$\forall{m,n,l}\in{\mathbb{N}}, m>n\implies m-n=l / m=n+l$$
+
+\begin{align*}
+\text{resta}(m,n) &:= \text{ si } n=1: \text{prev}(m)\\
+                  &:= \text{ si } n\neq{1}: \text{resta}(\text{prev}(m), \text{prev(n)})
+\end{align*}
+\end{defi}
+
+\begin{obs}La resta {\bfseries no} es una operación en $\mathbb{N}$, sino en $\mathbb{Z}$\end{obs}
+
+\begin{defi}$(\mathbb{Z}, +)$\\
+$\bullet \text{ si }a,b\in{\mathbb{N}}$, las anteriores.\\
+$\bullet \text{ si }a\in{\mathbb{Z}}, a+0=a$ \\
+$\bullet$ si \[a\in{-\mathbb{N}}, a+b=
+\begin{cases}
+\text{ si } & a>-b\\
+&a-(-b)\\
+\text{ si } &a=-b\\
+&0\\
+\text{ si } &a<-b\\
+&-(-b-a)
+\end{cases}
+\]
+$\bullet \text{ si }a,b\in{-\mathbb{N}} a+b=((-a)+(-b))$
+\end{defi}
+
+\begin{defi} $(\mathbb{Z}, *)$\\
+TODO: define this function.
+\end{defi}
+
 \part{Conteo}
 
 \part{Divisibilidad}
