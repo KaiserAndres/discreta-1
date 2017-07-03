@@ -315,22 +315,66 @@ Este conjunto opera de manera similar al de los naturales, especialemte en opera
 \begin{defi}$(\mathbb{Z}, +)$\\
 $\bullet \text{ si }a,b\in{\mathbb{N}}$, las anteriores.\\
 $\bullet \text{ si }a\in{\mathbb{Z}}, a+0=a$ \\
-$\bullet$ si \[a\in{-\mathbb{N}}, a+b=
+$\bullet$ si \[a\in{-\mathbb{N}}, b\in{-\mathbb{N}} a+b=
 \begin{cases}
 \text{ si } & a>-b\\
-&a-(-b)\\
+            &a-(-b)\\
 \text{ si } &a=-b\\
-&0\\
+            &0\\
 \text{ si } &a<-b\\
-&-(-b-a)
+            &-(-b-a)
 \end{cases}
 \]
 $\bullet \text{ si }a,b\in{-\mathbb{N}} a+b=((-a)+(-b))$
 \end{defi}
 
 \begin{defi} $(\mathbb{Z}, *)$\\
-TODO: define this function.
+$\bullet\text{ si } a,b\in{\mathbb{N}}\text{ las anteriores}$\\
+$\bullet\text{ si } a\in{\mathbb{Z}} a*0=0$\\
+$\bullet\text{ si } a\in{\mathbb{N}}, b\in{-\mathbb{N}} a*b=-(a*(-b))$\\
+$\bullet\text{ si } a,b\in{-\mathbb{N}} a*b=(-a)*(-b)$
 \end{defi}
+
+El conjunto $(\mathbb{Z}, +, *)$ satisface las siguientes propiedades:\\
+
+1) $(\mathbb{Z}, +)$ es:
+\begin{enumerate}
+\item Asociativa \label{zsumaso}
+\item Conmutativa \label{zsumacon}
+\item Elemento neutro: 0 \label{zsumneu}
+\item Inverso: si $a\in{\mathbb{Z}}$, existe $b\in{\mathbb{Z}}/a+b=0 \land b=-a$ \label{zsuminv}
+\end{enumerate}
+
+Todo conjunto que satisface \ref{zsumaso} y \ref{zsuminv} se llama {\itshape abeliano}. \\
+
+2) $(\mathbb{Z}, *)$ satisface:\\
+\begin{enumerate}
+\item Asociativa
+\item Conmutativa
+\item Elemento neutro 1: $a*1=a\forall{a}\in{\mathbb{Z}}$
+\end{enumerate}
+
+3) Distributiva $a*(b+c)=a*b+a*c$\\
+
+Un grupo que satisface \ref{zsumaso}, \ref{zsumacon} y \ref{zsumneu} se llama {\itshape conmutativo}. 
+
+\begin{obs} Es posible usar como notación para los números en $\mathbb{Z}$ como una tupla de números en $\mathbb{N}$.
+\begin{align*}
+\mathbb{Z} &= \mathbb{N}\times\mathbb{N}\\
+a,b &\in{\mathbb{N}}\\
+a-b &:= (a,b)=(c,d)\iff a+d=b+c
+\end{align*}
+Como ejemplo:
+\begin{align*}
+0 &= (1,1),(2,2) \text{ etc}\dots\\
+1 &= (2,1),(3,2) \text{ etc}\dots\\
+\end{align*}
+Esta forma de notar los numeros en $\mathbb{Z}$ permite también operar:
+\begin{align*}
+(a,b)+(c,d)&=(a+c,b+d)\\
+(a,b)+(c,d)&=(a*c+b*d,a*d+b*c)
+\end{align*}
+\end{obs}
 
 \part{Conteo}
 
