@@ -415,6 +415,24 @@ $$|\underbrace{A_1\cup{A_2}\cup{\dots}\cup{A_n}}_{B}\cup{A_{n+1}}|=|B\cup{A_{n+1
 Si $x\in{B\cap{A_{n+1}}}, x\in{B}\land x\in{A_{n+1}}\iff x\in{A_i}$ para algun $i$, $1\leq{i}\leq{n} \land x\in{A_{n+1}} \implies x\in A_i \cap A_{n+1} \neq \emptyset$.
 \end{demo}
 
+¿Que es lo que sucede si eliminamos a asumpción de que $A\cap{B}=\emptyset$?
+
+\begin{align*}
+A          &= \{A \backslash(A\cap{B})\}\cup{(A\cap{B})}\\
+B          &= \{B \backslash(A\cap{B})\}\cup{(A\cap{B})}\\
+A\cup{B}   &= \{A\backslash(A\cap{B})\}\cup{\{A\cap{B}\}}\cup \{B\backslash(A\cap{B})\}\\
+|A\cup{B}| &= |A\backslash(A\cap{B})| + |A\cap{B}| + |B\backslash(A\cap{B})|\\
+|A|        &= |A\cap{B}| + |A\backslash(A\cap{B})|\\
+|A| - |A\cap{B}| &= |A\backslash(A\cap{B})|\\
+|A\cup{B}| &= |A| - |A\cap{B}| + |A\cap{B}| + |B| - |A\cap{B}|\\
+|A\cup{B}| &= |B| + |B| - |A\cap{B}|
+\end{align*}
+
+\begin{teo} Si $A$ y $B$ son conjuntos finitos, $|A\times{B}| = |A|*|B|$\end{teo}
+TODO: desmostrar.
+
+\section{Conteo y combinatoria.}
+
 \part{Divisibilidad}
 
 \part{Aritmética Modular}
