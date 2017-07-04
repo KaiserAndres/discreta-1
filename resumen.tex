@@ -1,5 +1,4 @@
-\documentclass[9pt,a4paper]{article}
-
+\documentclass[9pt,a4paper,draft]{article}
 
 \usepackage[utf8]{inputenc}
 \usepackage{amsthm}
@@ -377,6 +376,44 @@ Esta forma de notar los numeros en $\mathbb{Z}$ permite también operar:
 \end{obs}
 
 \part{Conteo}
+
+\section{Cardinalidad de conjuntos}
+
+\begin{obs}
+Para el proposito de este texto usaremos $|A|$ para denotar la función {\itshape cardinalidad} de un conjunto, sin embargo tambien se puede usar $\#A$ o $tam(A)$.
+\end{obs}
+
+Para contar los elementos de un conjunto, les asignamos un número natural ordenado a cada uno de los elementos del conjunto, para esto damos uso de una función $\dot{f}$ biyectiva.
+
+$$\{1,2,3,4\}\xrightarrow{\dot{f}}A$$
+
+¿Porque esta operación es correcta? En general si $n\neq{m}\, n,m\in{\mathbb{N}}\, \text{ no existe }\{1\dots n\}\to\{1\dots m\}$\\
+
+\begin{teo}
+En el caso que tengamos dos conjuntos {\bfseries disjuntos} $A$ y $B$, se da que:\\
+$$|A|+|B|=|A\cup B|$$
+Y tambíen se da en el caso del producto cruz entre los conjuntos.\\
+$$|A|*|B|=|A\times{B}|$$
+\end{teo}
+
+\begin{demo} Asumiendo que $A\cap{B}=\emptyset$
+\begin{align*}
+& |A| = n & A=\{a_1 \dots a_n\}\\
+& |B| = m & B=\{b_1 \dots b_m\}\\
+& A\cup{B}=\{\underset{1}a_1\dots \underset{n}a_n, \underset{n+1}b_1 \dots \underset{n+m}b_m\} & \implies |A\cup{B}|=m+n
+\end{align*}
+\end{demo}
+
+\begin{teo} Si $A_1 \dots A_n$ son conjuntos finitos y disjuntos dos a dos ($A_i\cap A_j = \emptyset,\text{ si }i\neq{j}$) entonces $|A_1\cup{A_2}\cup{\dots}\cup{A_n}| = |A_1|+|A_2|+\dots+|A_n|$\end{teo}
+
+\begin{demo}
+Daremos uso de inducción con la hipótesis inductiva propuesta anteriormente.\\
+$P(1)$ es verdadera ya que $|A| = |A|$\\
+$P(n+1)$:\\
+$$|\underbrace{A_1\cup{A_2}\cup{\dots}\cup{A_n}}_{B}\cup{A_{n+1}}|=|B\cup{A_{n+1}}|=|B|+|A_{n+1}|$$
+
+Si $x\in{B\cap{A_{n+1}}}, x\in{B}\land x\in{A_{n+1}}\iff x\in{A_i}$ para algun $i$, $1\leq{i}\leq{n} \land x\in{A_{n+1}} \implies x\in A_i \cap A_{n+1} \neq \emptyset$.
+\end{demo}
 
 \part{Divisibilidad}
 
