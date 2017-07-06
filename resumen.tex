@@ -294,6 +294,15 @@ Casos:\\
 2) Si hay un $k\in{\mathbb{N}}, 1\leq{k}\leq{n}, k\in{A} \implies P(k)\text{ si } k\in{A}, A$ tiene primer elemento por hipótesis inductiva.
 \end{demo}
 
+\section{Inducción corrida}
+
+La inducción corrida es un caso especial de la inducción estandard, en la cual toma como hipótesis:
+
+\begin{defi} Dado un $k\in{\mathbb{N}}$ y una proposición $P$, se dice que $P(n)$ es verdadero si:\\
+$$P(k) \text{ es verdadero.}$$
+$$P(n+1) \forall{n>k} \text{ es verdadero.}$$
+\end{defi}
+
 \section{El conjunto de $\mathbb{Z}$}
 
 \begin{defi} El conjunto de los enteros está definido como:\\
@@ -432,6 +441,50 @@ A\cup{B}   &= \{A\backslash(A\cap{B})\}\cup{\{A\cap{B}\}}\cup \{B\backslash(A\ca
 TODO: desmostrar.
 
 \section{Conteo y combinatoria.}
+
+El conteo como el nombre indica consiste en contar las diferentes combinaciónes especificas de un conjunto según alguna condición dada. Por ejemplo para ver todos los números de 5 dijitos capicua podemos usar el proceso siguiente:
+
+$$\underbrace{*+-}_\text{unica variación de importancia}+*$$
+
+Podemos tomar unicamente los primeros tres digitos, esto se da por la simetría de los números capicua.
+
+$$|{1\dots 9}\times{0\dots 9}\times{0\dots 9}| = 9*10*10 = 900$$
+
+En general se puede pensar en este tipo de problemas como:
+
+$$|\{f\{1\dots n\}\to\{1\dots m\}, \text{ injectivas}\}|$$
+
+\section{Numero binomial o combinatorio}
+
+\begin{defi} EL número combinatorio lo denotamos como: $$\binom{m}{n}=\frac{m!}{(m-n)!*n!}$$\end{defi}
+
+Dado un conjunto de $m$ elementos, cuantos subjoncjuntos de $n$ elementos existen? $\binom{m}{n}$ ya que cada conjunto lo contamos $n!$ veces por las distintas permutaciónes, por lo que cada combinación aparece $n!$ veces.
+
+\begin{defi} Complemento del número combinatorio: $$\binom{m}{n}=\binom{m}{n-1}$$\end{defi}
+
+\begin{teo} si $m,n\in{\mathbb{N}}\;1\leq{n}\leq{m}$ $$\binom{m+1}{n}=\binom{m}{n} + \binom{m}{n-1}$$ \end{teo}
+
+\begin{demo}
+Quiero contar conjuntos $A$ con $n$ elementos
+
+\begin{itemize}
+\item Subconjuntos $A\backslash m+1\in{A}$
+\item Subconjuntos $A\backslash m+1\notin{A}$
+\end{itemize}
+
+Si $m+1\in{A}\implies$ resta elejur $n+1$ elementos de $m$, lo puedo hacer de $\binom{m}{n-1}$.\\
+
+Si $m+1\notin{A}\implies$ resta elejir $n$ elementos de $m$ cosas $\binom{m}{n}$
+
+$$\text{Por ende hay } \binom{m}{n} + \binom{m}{n-1}$$
+
+\end{demo}
+
+\begin{teo} Binomio de newton: Si $a,b\in{\mathbb{R}},\, n\in{\mathbb{N}}$
+$$(a+b)^n = \displaystyle\sum_{i=0}^{n} \binom{n}{i}*a^i*b^{n-i}$$
+\end{teo}
+
+TODO: demostrar?
 
 \part{Divisibilidad}
 
