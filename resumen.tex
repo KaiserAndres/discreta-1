@@ -488,6 +488,43 @@ TODO: demostrar?
 
 \part{Divisibilidad}
 
+En $\mathbb{Z}$ vimos que hay un producto con cirtas propiedades.
+
+\begin{defi} si $a,b\in{\mathbb{Z}}$, decimos que $a$ "divide" a $b$ (denotado como $a|b$) si $\exists{q}\backslash b=a*q$\end{defi}
+
+Para $a,b,c\in{\mathbb{Z}}$ valen las siguientes propiedades:
+
+\begin{teo} si $a|b\implies a|b*c$ \end{teo}
+\begin{demo}si $a|b\implies b=a*q$, por lo que $b*c=a*k$\end{demo}
+
+\begin{teo} si $a|b$ y $b|c\implies a|c$\end{teo}
+\begin{demo}$a|b\implies b=a*q,\; b|c\implies c=b*k\implies c=\underbrace{(a*q)}_{b}*k$\end{demo}
+
+\begin{teo} si $a|b$ y $b\neq{0}\implies|a|\leq|b|$\end{teo}
+\begin{demo}
+si $a|b\implies b=a*q,\;q\in{\mathbb{Z}}$
+\begin{align*}
+\text{Como } b\neq{0}&, q\neq{0}, |q|\geq{1}\\
+|b|&=|a*q|=|a|*|q|\\
+|q|&\geq{1}\\
+|a|*|q|&\geq|a|
+\end{align*}
+\end{demo}
+
+\begin{teo} si $a|b$ y $a|c\implies{a|b+c}$, mas generalmente $m,n\in{\mathbb{Z}},\;a|m*b+n*c$ \end{teo}
+\begin{demo}
+si $a|b\implies b=a*q,\;a|c\implies c=a*p$
+
+\begin{align*}
+b+c&=a*q+a*p\\
+ &=a*(q+p) \implies a|b+c
+\end{align*}
+Mas generalmente
+\begin{align*}
+m*b+n*c &= m*a*q+n*a*p\\
+ &= a*(m*q+n*p) \implies a|m*b+n*c
+\end{align*}
+\end{demo}
 \part{Aritmética Modular}
 
 \part{Números Complejos}
