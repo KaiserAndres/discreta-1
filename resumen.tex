@@ -23,6 +23,7 @@
 \DeclareMathOperator{\Div}{Div}
 \DeclareMathOperator{\mcd}{mcd}
 \DeclareMathOperator{\mcm}{mcm}
+\DeclareMathOperator{\sig}{signo}
 \begin{document}
 
 \maketitle
@@ -565,6 +566,52 @@ Si $d\in{\Div(a)\cap\Div(b)},\; d|a \land d|b \implies d|a\; d|b-a*m$ por Teo \r
 
 $$d|a \land d|b-a*m \implies d|a\;d|(b-a*m)+a\;m=b \text{ (Teo. \ref{divDsuma})}$$
 \end{teo}
+
+\begin{teo} dados $a,b\in{\mathbb{Z}}$ con $a\neq{0}$ existen {\bfseries únicos} $q,r\in{\mathbb{Z}},\; 0\leq{r}\leq{|a|}\text{ tal que } b=a*q+r$ \end{teo}
+
+\begin{demo} {\bfseries Existencia}
+
+Dado un conjunto $\mathcal{R} = \{ b-a*q\; q\in{\mathbb{Z}}\}\cap\{\mathbb{Z}\cup\{0\}\}$ \\
+$r$ es el menor elemento de $\mathcal{R}$ \\
+Veamos que $\mathcal{R}\neq\emptyset$
+
+\begin{enumerate}
+\item Si $b\geq0$, con $q=0, b-a*0 = b \geq 0$
+\item si $b<0$,
+\begin{align*}
+b+|a*b| &\geq 0\\
+a \neq 0\\
+|a*b| &\geq |b|\\
+b+|a*b| &\geq |b|+b = 0\\
+\text{Tomando } q &= b * \sig(a) = |a|*|b|\\
+-a*q = -a*b*\sig(a) &= |a|*|b|
+\end{align*}
+\end{enumerate}
+
+Como $\mathcal{R}\neq{\emptyset},\; r=b-a*q \iff b=a*q+r$\\
+Falta ver que $0\leq{r}\leq{|a|}$\\
+Si $r\geq{|a|}, r-|a|\geq{0}$, pero $r-|a|<r$ (pues $|a|>0$) lo que contradice que r es el mismo.\\
+
+{\bfseries Unicidad} 
+
+\begin{align*}
+b &= a*q+r & 0\leq{r}, & \tilde{r} < |a|\\
+b &= a*\tilde{q}+\tilde{r}
+\end{align*}
+
+Quiro ver que $r=\tilde{r}, q=\tilde{q}$
+$$0=a*(q-\tilde{q})+r-\tilde{r}\implies r-\tilde{r}=a*(\tilde{q}-q)$$
+Si $r-\tilde{r}\neq0,\; |a|\leq|r-\tilde{r}|$
+
+\begin{align*}
+0\leq{r}<|a| & 0\leq{r}<|a| & 0\leq{r}<|a|\\
+0\leq{\tilde{r}}<|a| &\implies 0\geq-\tilde{r}>|a| & -|a|<\tilde{r}\leq{0}\\
+-|a|<r-\tilde{r}<|a| &\implies |r-\tilde{r}| < |a|
+\end{align*}
+
+Esto es una contradiccioón, con lo cual $r-\tilde{r}=0\implies r=\tilde{r}$
+$$a*q=b-r=b-\tilde{r}=a*\tilde{q}\implies q=\tilde{q}$$
+\end{demo}
 
 \part{Aritmética Modular}
 
