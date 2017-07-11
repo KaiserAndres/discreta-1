@@ -2,6 +2,7 @@
 
 \usepackage[utf8]{inputenc}
 \usepackage{amsthm}
+\usepackage{amsmath}
 \usepackage{mathtools}
 \usepackage{amsfonts}
 
@@ -18,6 +19,10 @@
 \newtheorem{demo}{Demostración}[teo]
 \newtheorem{col}{Colonario}
 \newtheorem{obs}{Observación}
+
+\DeclareMathOperator{\Div}{Div}
+\DeclareMathOperator{\mcd}{mcd}
+\DeclareMathOperator{\mcm}{mcm}
 \begin{document}
 
 \maketitle
@@ -500,7 +505,7 @@ Para $a,b,c\in{\mathbb{Z}}$ valen las siguientes propiedades:
 \begin{teo} si $a|b$ y $b|c\implies a|c$\end{teo}
 \begin{demo}$a|b\implies b=a*q,\; b|c\implies c=b*k\implies c=\underbrace{(a*q)}_{b}*k$\end{demo}
 
-\begin{teo} si $a|b$ y $b\neq{0}\implies|a|\leq|b|$\end{teo}
+\begin{teo} \label{diva0} si $a|b$ y $b\neq{0}\implies|a|\leq|b|$\end{teo}
 \begin{demo}
 si $a|b\implies b=a*q,\;q\in{\mathbb{Z}}$
 \begin{align*}
@@ -511,7 +516,7 @@ si $a|b\implies b=a*q,\;q\in{\mathbb{Z}}$
 \end{align*}
 \end{demo}
 
-\begin{teo} si $a|b$ y $a|c\implies{a|b+c}$, mas generalmente $m,n\in{\mathbb{Z}},\;a|m*b+n*c$ \end{teo}
+\begin{teo}\label{divDsuma} si $a|b$ y $a|c\implies{a|b+c}$, mas generalmente $m,n\in{\mathbb{Z}},\;a|m*b+n*c$ \end{teo}
 \begin{demo}
 si $a|b\implies b=a*q,\;a|c\implies c=a*p$
 
@@ -525,6 +530,42 @@ m*b+n*c &= m*a*q+n*a*p\\
  &= a*(m*q+n*p) \implies a|m*b+n*c
 \end{align*}
 \end{demo}
+
+TODO: añadir referencia entre la identidad de pascal y el triangulo de pascal.
+
+\begin{defi} si $a\in{\mathbb{Z}}$ definimos el conjunto de divisores de $a$ como:
+\begin{align*}
+\Div(a) &= \{b\in{\mathbb{Z}} \backslash b|a\}\\\
+\Div(2) &= \{-1,-1,1,2\}
+\end{align*}
+\end{defi}
+
+\begin{obs} Si $a|b \implies -a|b \; (b=a*q,\, b=(-a)*(-q))$ \\ $$\Div(0) = \mathbb{Z} \; 0|0 \iff 0=0*1$$
+Si $a\in{\mathbb{Z}}, a\neq{0}, \Div(a)$ es finito porque el teorema \ref{diva0} dice que si $a\neq{0}, b|a, |b|\leq|a|\implies \Div(a)\subset \{b\in{\mathbb{Z}} \backslash |b|\leq|a|\}$
+\end{obs}
+
+\begin{defi} Si $a,b\in{\mathbb{Z}}$, alguno no nulo, definimos el "maximo común divisor" de $a$ y $b$ como  el mas grande de los diisores comúnes, o sea:
+$$\operatorname{max}(\{\Div(a)\cap\Div(b)\}) = \mcd(a,b)$$
+
+Analogamente:
+
+\begin{enumerate}
+\item $\mcd(a,b), mcd(a,b)|b$
+\item si $d|a$ y $d|b,\; d\leq{\mcd(a,b)}$
+\end{enumerate}
+\end{defi}
+
+\begin{teo} si $a,b\in{\mathbb{Z}}$, algúno no nulo, $\mcd(a,b) = \mcd(a, b-a*m)\forall m\in{\mathbb{Z}}$\end{teo}
+
+\begin{teo} $$\Div(a)\cap\Div(B)=\Div(a)\cap\Div(b-a*m)$$
+$$A=B \iff A\subseteq{B} \land B\subseteq{A}$$
+Lutego podemos ver que:
+$$\Div(a)\cap\Div(b) \subseteq \Div(a)\cap\Div(b-a*m)$$
+Si $d\in{\Div(a)\cap\Div(b)},\; d|a \land d|b \implies d|a\; d|b-a*m$ por Teo \ref{divDsuma}, y $\Div(a)\cap\Div(b-a*m)\subseteq\Div(a)\cap\Div(b)$
+
+$$d|a \land d|b-a*m \implies d|a\;d|(b-a*m)+a\;m=b \text{ (Teo. \ref{divDsuma})}$$
+\end{teo}
+
 \part{Aritmética Modular}
 
 \part{Números Complejos}
