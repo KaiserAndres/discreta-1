@@ -613,6 +613,40 @@ Esto es una contradiccioón, con lo cual $r-\tilde{r}=0\implies r=\tilde{r}$
 $$a*q=b-r=b-\tilde{r}=a*\tilde{q}\implies q=\tilde{q}$$
 \end{demo}
 
+\begin{teo} $a,b\in{\mathbb{Z}}, a\neq{0},\; a|b$ el resto de dividir $b$ por $a$ es 0\end{teo}
+\begin{demo} 
+Si $r=0 \implies b=a*q+0 \implies a|b$ \\
+Reciprocamente si $a|b,\; b=a*q=a*q+\underbrace{0}_\text{Unico posible resto}$
+\end{demo}
+
+\section{Bases Númericas}
+
+$\underbrace{1}_{1000}\underbrace{2}_{100}\underbrace{3}_{10}\underbrace{4}_{1}$, este es un sistema posicional con base 10, donde 1 decena = 10 unidades, 1 centena = 10 decenas = $10^2$ unidades, etc...\\
+
+Así: $1237 = 1*10^3+2*10^2+3*10+7*10^0$
+
+¿Como podemos escribir un número en base $b$?
+
+\begin{align*} & n=\displaystyle\sum_{i=0}^{m}a_i*b^i & a_i=(0, \dots, b-1)\end{align*}
+
+\begin{teo} Si $a\in{\mathbb{N}}m d\geq2, n\in{\mathbb{N}}, n$ se puede escribir de manera única como:
+$$n = a_1 + a_1*d^1 + a_2*d^2 + \dots + a_m*d^m$$
+Donde $0\leq{a_i}<d$
+\end{teo}
+\begin{demo}
+Si $n=1, n=1$ ya está.\\
+Supongamos que vale hasta $n$, veamos que $n+1$:\\
+$n+1$ dividido $d, n+1=d*q+r$ de forma unica.\\
+Por H.I. $q=b_0+b_1*d+\dots+b_j*d^j$ de forma única.\\
+$$n+1 = r + b_0*d + b_1*d^2 + \dots + b_j*d^{j+1}$$
+\end{demo}
+
+\begin{teo} \label{teoeuclides} Si $a,b\in{\mathbb{Z}}$, alguno no núlo, entonces existen $m,n\in{\mathbb{Z}}$ que:\\
+\begin{align*} & \mcd(a,b) = a*m+b*n & |a|\geq|b| \end{align*}
+El máximo común divisor se puede escribir como la combinación lineal de $a$ y $b$.
+\end{teo}
+
+TODO: demostrar.
 \part{Aritmética Modular}
 
 \part{Números Complejos}
