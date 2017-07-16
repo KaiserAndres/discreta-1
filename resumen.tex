@@ -24,6 +24,8 @@
 \DeclareMathOperator{\mcd}{mcd}
 \DeclareMathOperator{\mcm}{mcm}
 \DeclareMathOperator{\sig}{signo}
+
+\newcommand{\modu}[1]{\quad(\text{mód }#1)}
 \begin{document}
 
 \maketitle
@@ -748,6 +750,42 @@ Claramente $\prod_{p}p^{\min\{\mathcal{V}_p(a), \mathcal{V}_p(b)\} |a \land |b \
 \end{demo}
 
 \part{Aritmética Modular}
+
+\begin{defi} si $m\in{\mathbb{Z}},\; a,b\in{\mathbb{Z}}$, decimos que $a$ y $b$ son congruentes módulo $m$ (notación $a \equiv b\modu{m}$) si $m|a-b$\end{defi}
+
+Como ejemplo si $m=0, a \equiv b \modu{0} \iff 0|a-b \iff a-b=0 \iff a=b$
+
+\begin{teo} si $m\in{\mathbb{N}},\; a\in{\mathbb{Z}}\; r=$resto de dividir $a$ por $m$
+$$ a \equiv r \modu{m} \quad a=mq+r$$
+\end{teo}
+
+\begin{demo}
+$a\equiv r \modu{m} \iff m|a-r = mq$ \\
+\begin{align*}
+\intertext{Si $a,b\in{\mathbb{Z}, a\equiv b \modu{m} \iff}$}
+r_m(a) &= r_m(b) \\
+a &= mq_1+r_m(a) \\
+b &= mq_2+r_m(b)
+\end{align*}
+
+\begin{itemize}
+\item $\Leftarrow) a-b=b(q_1-q_2) \implies m|a-b$
+\item $\Rightarrow) m|a-b = m(q_1-q_2)+r_m(a)-r_m(b) \implies m|r_m(a)-r_m(b)$
+\begin{align*}
+0 & \leq r_m(a) & < m &\\
+-m & < r_m(a) - r_m(b) & < m &\\
+0 & \geq -r_m(b) & > -m &
+\end{align*}
+$m|r_m(a)-r_m(b)$, si $r_m(a)-r_m(b)\neq{0}$ \\
+$ m \leq r_m(a) - r_m(b)$ {\bfseries absurdo!} $\implies r_m(a) - r_m(b)=0 \implies r_m(a)=r_m(b)$ 
+\end{itemize}
+\end{demo}
+
+\begin{obs}
+Mirar congruencias modulo $m$ "es como" mirar el conjunto de restos en la división por $m$, con la ventaja que podemos operar.
+\end{obs}
+
+Fijemos $m\in{\mathbb{N}}$. En $\mathbb{Z}$ definimos una "relación" determinada por $a\sim b$ si $a\equiv b \modu{m}$
 
 \part{Números Complejos}
 
