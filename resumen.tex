@@ -647,6 +647,106 @@ El máximo común divisor se puede escribir como la combinación lineal de $a$ y
 \end{teo}
 
 TODO: demostrar.
+
+\section{Ecuaciónes diafanticas}
+
+\begin{teo} si $a,b,c \in{\mathbb{Z}}$, la ecuación lienas:
+$$ax+by=c$$
+Tiene soluciones enteras $\iff \mcd(a,b)|c$. En tal caso las soluciones son infinatas, dadas por:
+\[
+\begin{cases}
+x = x_0 + \frac{b}{\mcd(a,b)}t \\
+y = y_0 + \frac{a}{\mcd(a,b)} t 
+\end{cases}
+\]
+\end{teo}
+\begin{demo} Tenemos que demostrar ambas partes de $\iff$\\
+\begin{itemize}
+\item $\Rightarrow) \mcd(a,b)$ divide al lado iziquiero de la igualdad $\forall{x,y}\in{\mathbb{Z}} \implies$ si has solución $\mcd(a,b)|c$ \\
+\item $\Leftarrow) \exists{r,s}\in{\mathbb{Z}}$ tal que $\mcd(a,b) = \underbrace{ar+bj}_{\oplus}$ \\
+$\mcd(a,b)|c \implies c = \mcd(a,b)*q,\; q\in{\mathbb{Z}}$\\
+Multiplicamos $\oplus$ por $q$\\
+$q*\mcd(a,b) = c = a\underbrace{ar}+b\underbrace{qj}\; (qr, qj)$ es solución.
+\end{itemize}
+\end{demo}
+
+\begin{defi} si $n\in{\mathbb{Z}}, n$ es primo si: $\#\Div(n)=4$ \\
+(Tiene exactamente 4 divisores distintos: $\pm1, \pm n$)\end{defi}
+
+\begin{obs}
+1 {\bfseries no} es primo. 
+\end{obs}
+
+\begin{obs}
+si $n$ no es primer, $n\neq{1,0}$ se dice compuesto. Vale que $n=ab\; a,b\neq\pm1$\\
+si $d|n, |d|\leq{n}$
+\end{obs}
+
+\begin{teo} \label{teofundamentalaritmetica} Todo $n\in{\mathbb{Z}}, n\neq{0,1,-1}$ se escribe como
+$$n ) \sig(n)\prod_{i=1}^{r}p_i^{e_i}$$
+Donde $p_i$ son primos positivos distintos, $e_i\in{\mathbb{N}}$
+\end{teo}
+\begin{demo}
+Podemos suponer que $n>0 \; (n\in{\mathbb{N}})$, entonces por inducción fuerte:\\
+$n=2=2^1$, supongamos que vale $i=1\dots n$, veamos $n+1$
+\begin{itemize}
+\item Si $n+1$ es primer, vale.
+\item sino $n=a*b,\; 1>a, b<n+1$, por HI tanto $a$ como $b$ se factorizan.
+\end{itemize}
+Ahora verificamos la unicidad:\\
+$$A=\{n\in{\mathbb{Z}}, n\text{ admite al menos 2 factores distintos}\}$$
+Si $a\neq\emptyset\implies A$ tiene primer elemento
+$$n = p_i^{e_1} \dots p_r^{e_r} = q_1^{t_q} \dots q_s^{t_s}$$
+$$p_1|n = q_1^{t_1} \dots q_s^{t_s} \implies p_1|q_1 \text{ (alguno)}$$
+\end{demo}
+
+\begin{defi} si $n\in{\mathbb{Z}},\; n\neq 0 p$ es primo.
+$$\mathcal{V}_p(n) = \max\{k\in{\mathbb{N}}\cup\{0\}\text{ tal que } p^k|n\}$$
+Es el exponente de $p$ en la factorización de $n$.
+\end{defi}
+
+\begin{teo} Existen infinitos primos\end{teo}
+\begin{demo}
+Supongamos que: $p_1,\dots,p_N$ son todos los primos.
+$$M = \prod^{N}p_i + 1 \in{\mathbb{N}}\implies\text{ se factoriza}\implies\text{ algún primo lo divide}$$
+Luego $p_i | M + 1 \implies p_i|1$ {\bfseries absurdo}. 
+\end{demo}
+
+\begin{teo} si $a,b\in{\mathbb{Z}}$, no nulos:
+$$ a|b \iff \mathcal{V}_p(a) \leq \mathcal{V}_p(b) \forall p \text{ primo.}$$
+\end{teo}
+
+\begin{demo}
+\begin{itemize}
+\item $\Rightarrow)$ si $a|b, \exists c \in{\mathbb{Z}}$ tal que $b=ac$ \\
+Sea $p$ un primo 
+\begin{align*}
+\mathcal{V}_p(b) &= \mathcal{V}_p(ac) \\
+&= \mathcal{V}_p(a) + \underbrace{\mathcal{V}_p(c)}_{\geq 0} \geq \mathcal{V}_p(a)
+\end{align*}
+\item $\Leftarrow)$Supongamos $a,b\in{\mathbb{Z}}$ tomo $c=\prod_{p}p^{\mathcal{V}_p(b)-\mathcal{V}_p(a)}$
+$$ ac=(\prod_{p} p^{\mathcal{V}_p}) * (\prod_{p}p^{\mathcal{V}_p(b)-\mathcal{V}_p(a)}) = b$$
+\end{itemize}
+\end{demo}
+
+\begin{teo} si $a,b\in{\mathbb{Z}}$ no nulos
+$$\mcd(a,b)=\prod_{p}p^{\min\{\mathcal{V}_p(a), \mathcal{V}_p(b)\}}$$
+\end{teo}
+
+\begin{demo}
+Por la proposición, si $d|a$\\
+
+\[
+\left. \begin{align*}
+\mathcal{V}_p(d) &\leq \mathcal{V}_p(a) \\
+\text{si } d|b,\; \mathcal{V}_p(d) &\leq \mathcal{V}_p(b)
+\end{align*} \right\}
+\text{ si } d|a \land d|b \to \mathcal{V}_p(d) \leq \min\{\mathcal{V}_p(a), \mathcal{V}_p(b)\}
+\]
+
+Claramente $\prod_{p}p^{\min\{\mathcal{V}_p(a), \mathcal{V}_p(b)\} |a \land |b \implies}$ es le mayor de los divisores comúnes.
+\end{demo}
+
 \part{Aritmética Modular}
 
 \part{Números Complejos}
