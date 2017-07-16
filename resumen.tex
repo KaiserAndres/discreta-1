@@ -787,6 +787,23 @@ Mirar congruencias modulo $m$ "es como" mirar el conjunto de restos en la divisi
 
 Fijemos $m\in{\mathbb{N}}$. En $\mathbb{Z}$ definimos una "relación" determinada por $a\sim b$ si $a\equiv b \modu{m}$
 
+\begin{teo} La relación de congruencia es reflexiva, simetrica y transitiva\end{teo}
+
+\begin{demo}
+{\bfseries Reflexiva}: si $a\in{\mathbb{Z}}, a\sim a_m$ osea $a\equiv a\modu{m} \iff m|a-a = 0$ 
+\end{demo}
+
+\begin{demo}
+{\bfseries Simetrica}: si $a\sim b\modu{m} \implies b\sim a\modu{m}$
+$$ m|a-b \implies m|b-a = (a-b)(-1)$$
+\end{demo}
+
+\begin{demo}
+{\bfseries Transitiva}: si $a\sim b\modu{m} \land b\sim c\modu{m} \implies a\sim c\modu{m}$
+$$m|a-b \land m|b-c \implies m|a-c$$
+$$m|(a-b)+(b-c) = a-c$$
+\end{demo}
+
 \part{Números Complejos}
 
 \part{Grafos}
