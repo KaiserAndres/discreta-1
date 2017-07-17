@@ -652,7 +652,7 @@ TODO: demostrar.
 
 \section{Ecuaciónes diafanticas}
 
-\begin{teo} si $a,b,c \in{\mathbb{Z}}$, la ecuación lienas:
+\begin{teo}\label{defdiafantica} si $a,b,c \in{\mathbb{Z}}$, la ecuación lienas:
 $$ax+by=c$$
 Tiene soluciones enteras $\iff \mcd(a,b)|c$. En tal caso las soluciones son infinatas, dadas por:
 \[
@@ -803,6 +803,60 @@ $$ m|a-b \implies m|b-a = (a-b)(-1)$$
 $$m|a-b \land m|b-c \implies m|a-c$$
 $$m|(a-b)+(b-c) = a-c$$
 \end{demo}
+
+\begin{teo} si $a,b,c,d\in{\mathbb{Z}},\; a\equiv{b}\modu{m} \land c\equiv{d}\modu{m}$, entonces:\\
+\begin{enumerate}
+\item $a+c\equiv{b+d}\modu{m}$
+\item $ac\equiv{bd}\modu{m}$
+\end{enumerate}
+\end{teo}
+
+\begin{demo}
+$$m|a-c \implies a-b = mq$$
+$$m|c-d \implies c-d = mt$$
+
+\begin{enumerate}
+\item Quiero ver que:
+\begin{align*}
+m&|(a+c)-(b+d)\\
+ &=(a-b)+(c-d)\\
+ &=mq+mt = m(q+t)
+\end{align*}
+\item Quiero ver que:
+\begin{align*}
+m&|cd-bd\\
+ &=cd-ad+ad-bd\\
+ &=a(c-d)+d(a-b) = m(at+dq)
+\end{align*}
+\end{enumerate}
+\end{demo}
+
+Al tomar las congruencias en $m,\; m\neq{0}$, identificamos los números que tienen el mismo resto al dividirlos por $m$.
+
+\begin{defi} Si dotas las clases$\neq\bar{0}$ tiene inverso multiplicativo, se dice que es {\itshape  cuerpo}.
+$$\bar{x}\bar{y}=\bar{1}\quad \forall{\bar{x}\neq\bar{0}}$$
+\end{defi}
+
+\begin{teo} Si $a,b\in{\mathbb{Z}},\; a\equiv{b}\modu{m}$
+$$\forall{n\in{\mathbb{N}}}\quad a^n\equiv{b^n}\modu{m}$$
+\end{teo} TODO demostrar.
+
+\section{Ecuaciones lineales de congruencia.}
+
+Dados $m\in{\mathbb{Z}}\; m\neq{0}$ queremos estudiar la ecuación:
+$$ax\equiv{b}\modu{m}\quad a,b\in{\mathbb{Z}}$$
+
+Que $x$ sea solución quiere decir que:
+
+$$a|ax-b \iff ax-b=my \iff ax-my=b$$
+
+Vimos antes que $ax-my=b$ tiene solucón $\iff \mcd(a,m)|b$ (Ver teo. \ref{defdiafantica})
+
+\begin{obs}
+Notar que $x\equiv{x_0}\modu{\frac{m}{\mcd(a,m)}}$
+\end{obs}
+
+El numero $a\in{\mathbb{Z}}$ tiene inverso multiplicativo modulo $m$ si $\exists x\in{\mathbb{Z}}$ tal que $ax\equiv{1}\modu{m}$. Este tiene solucón $\iff\mcd(a,m)|1 \iff \mcd(a,m)=1$, osea $a$ y $m$ son coprimos.
 
 \part{Números Complejos}
 
