@@ -5,6 +5,7 @@
 \usepackage{amsmath}
 \usepackage{mathtools}
 \usepackage{amsfonts}
+\usepackage{amssymb}
 
 \title{Resumen matemática discreta 1}
 \author{Andrés Villagra de la Fuente - {\bfseries  andres.villagra(at)alumnos.unc.edu.ar}}
@@ -833,8 +834,8 @@ m&|cd-bd\\
 
 Al tomar las congruencias en $m,\; m\neq{0}$, identificamos los números que tienen el mismo resto al dividirlos por $m$.
 
-\begin{defi} Si dotas las clases$\neq\bar{0}$ tiene inverso multiplicativo, se dice que es {\itshape  cuerpo}.
-$$\bar{x}\bar{y}=\bar{1}\quad \forall{\bar{x}\neq\bar{0}}$$
+\begin{defi} Si dotas las clases$\neq\overline{0}$ tiene inverso multiplicativo, se dice que es {\itshape  cuerpo}.
+$$\overline{x}\overline{y}=\overline{1}\quad \forall{\overline{x}\neq\overline{0}}$$
 \end{defi}
 
 \begin{teo} Si $a,b\in{\mathbb{Z}},\; a\equiv{b}\modu{m}$
@@ -857,6 +858,49 @@ Notar que $x\equiv{x_0}\modu{\frac{m}{\mcd(a,m)}}$
 \end{obs}
 
 El numero $a\in{\mathbb{Z}}$ tiene inverso multiplicativo modulo $m$ si $\exists x\in{\mathbb{Z}}$ tal que $ax\equiv{1}\modu{m}$. Este tiene solucón $\iff\mcd(a,m)|1 \iff \mcd(a,m)=1$, osea $a$ y $m$ son coprimos.
+
+\begin{teo} Si $m$ es primo $\forall i\neq{0}\in{\modu{m}}$ tiene inverso multiplicativo.\end{teo}
+
+\begin{demo}
+En general, $a$ tiene inverso módulo $m\iff\mcd(a,m)=1$.
+$$ax\equiv1\modu{m}$$
+si $m$ es primo, $a\in{\mathbb{Z}},\; \mcd(a,m) = \begin{cases} 1\text{ si }m\nmid a \\ m\text{ si } m|a\end{cases}$
+
+\begin{itemize}
+\item Si $\mcd(a,m)=1$, $a$ tiene inverso mód $m$
+\item Si $\mcd(a,m)=m, a\equiv{0}\modu{m}$
+\end{itemize}
+
+En este caso, los números módulo $m$ son cuerpo.
+\end{demo}
+
+\begin{teo} si $p\in{\mathbb{N}}$ es primo, $a\in{\mathbb{Z}}$ tal que:
+\begin{enumerate}
+\item Si $p\nmid a,\; a^{p-1}\equiv1\modu{m}$
+\item Siempre $a^p\equiv a\modu{m}$
+\end{enumerate}
+\end{teo}
+
+\begin{demo}
+En general $\{\overline{1},\overline{2},\overline{3},\dots, \overline{p-1},\}$ todos los no núlos módulo $p$ vimos que tienen inverso.
+$$\underbrace{\{\overline{1},\overline{2},\overline{3},\dots, \overline{p-1},\}}_{(1)} \to^{\times{a}} \overbrace{\{a\times\overline{1},a\times\overline{2},a\times\overline{3},\dots, a\times\overline{p-1},\}}^{(2)}$$
+
+Afirmo: Ambos conjuntos son iguales salvo el orden.\\
+Primero veamos que (2) tiene $p-1$ elementos, osea:
+$$ay\equiv aj\modu{p}\implies y\equiv j\modu{p}$$
+
+Como $p\nmid a$, $a$ tiene inverso, si $ay\equiv aj\modu{p}, a^{-1}ay \equiv a^{-1}aj\modu{p} \implies y\equiv j\modu{p}$
+Ademas los elementos de (2) no son divisibles por $p\implies(2)\subset(1)$ y ambos tienen $p-1$ elementos $\implies$ son iguales.
+
+Luego como antes, si multiplicamos todos los elementos de (1) da lo mismo que hacerlo por (2)
+
+$$ \overline{p-1}! \equiv a\times\overline{1}, a\times\overline{2}, \dots, a\times\overline{p-1} \equiv a^{-1}\times\overline{p-1}! \modu{p}$$
+
+Al tener inverso multiplicativo, podemos cancelar $\implies a^{p-1}\equiv1\modu{p}$
+
+Si $p|a,\quad a^p\equiv a \modu{p} \implies 0\equiv0\modu{p}$\\
+Si $p\nmid a, \quad a^{p-1}\equiv1\modu{a} \implies a^p\equiv a\modu{p}$
+\end{demo}
 
 \part{Números Complejos}
 
