@@ -902,6 +902,71 @@ Si $p|a,\quad a^p\equiv a \modu{p} \implies 0\equiv0\modu{p}$\\
 Si $p\nmid a, \quad a^{p-1}\equiv1\modu{a} \implies a^p\equiv a\modu{p}$
 \end{demo}
 
+\begin{teo} (Euler - Fermant) si $m\in{\mathbb{N}}, d\in{\mathbb{Z}} \quad \mcd(a,m)=1$
+$$a^{\phi(m)}\equiv1\modu{m}$$
+Donde $\phi(m)=\#\{1\leq{i}\leq{m}, \mcd(i,m)=1\}$ es el Fi de euler.
+\begin{itemize}
+\item Si $p$ es primo, $\phi(p)=p-1$
+\item Si $q,p$ primos distintos $\phi(qp)=qp-q-p+1$
+\end{itemize}
+\end{teo} TODO demostrar
+
+\begin{teo} (Teorema Chino del resto) si $m,n\in{\mathbb{N}}$, el sistema de ecuaciones:
+
+\begin{align}
+\label{tcreja}x&\equiv a\modu{m}\\
+\label{chrejb}x&\equiv b\modu{n}
+\end{align}
+
+Tiene solución única mñodulo $mn$ si $\mcd(m,n)=1$, en general hay solución única módulo $\mcd(m,n)$ si $\mcd(m,n)|a-b$
+\end{teo} 
+
+\begin{demo}
+$x\equiv a\modu{m} \iff x=a+qm$, quiero ver cuales números satisfacen \ref{tcrejb}
+
+$$a+qm\equiv b\modu{n} \iff \underbrace{qm\equiv b-a\modu{n}}_{\bigoplus}$$
+
+Esta ecuación tiene solución $\iff \mcd(m,n)|b-a$ \\
+Por euclides $\mcd(m,n)=mr+ns$ \\
+Supongamos que son coprimos, $\mcd(m,n)=1\iff1\equiv mr\modu(n)$ \\
+En $\bigoplus$ multiplico por $r$:
+\begin{align*}
+rmq &\equiv r(b-a)\modu{n} \\
+q &\equiv r(b-a)\modu{n}
+\end{align*}
+
+\begin{align*}
+q=r(b-a)+nt \implies x &= a+m[r(b-a)+nt]\\
+                       &= a+mrb-mra+mnt\\
+		       &= a(1-mr)+mrb+mnt\\
+		       &= ans+bmr+mnt
+\end{align*}
+
+Osea $x\equiv ans + bmr \modu{mn}$
+
+\begin{align*}
+ns &\equiv 0\modu{n} & ns \equiv 1\modu{n}\\
+mr &\equiv 1\modu{m} & mr \equiv 0\modu{m}
+\end{align*}
+
+$$ 1 = \frac{m}{\mcd(m,n)}r + \frac{r}{\mcd(m,n)}s \implies \frac{m}{\mcd(m,n)}r \equiv 1 \modu{\frac{n}{\mcd(m,n)}}$$
+
+$$\mcd(m,n)|b-a \quad mq\equiv b-a\modu{n} \iff \frac{m}{\mcd(m,n)}q \equiv \frac{b-a}{\mcd(m,n)} \modu{\frac{n}{\mcd(m,n)}}$$
+
+$$bq\equiv b-a\modu{n} \quad mq=(b-a)+nt \iff \frac{m}{\mcd(m,n)}q=\frac{b-a}{\mcd(m,n)} + \frac{n}{\mcd(m,n)}t$$
+
+$$\iff \frac{mq}{\mcd(m,n)} \equiv \frac{b-a}{\mcd(m,n)} \modu{\frac{n}{\mcd(m,n)}}$$
+
+Luego multiplicamos por $r$:
+
+$$\underbrace{\frac{rm}{\mcd(m,n)}}_{=1}q \equiv \frac{r(b-a)}{\mcd(m,n)} \modu{\frac{n}{\mcd(m,n)}}$$
+
+$$ x=a+mq = a+m(\frac{r(b-a)}{\mcd(m,n)} + \frac{n}{\mcd(m,n)}t)$$
+
+$$q=\frac{r(b-a)}{\mcd(m,n)} + \frac{n}{\mcd(m,n)}$$
+
+\end{demo}
+
 \part{Números Complejos}
 
 \part{Grafos}
