@@ -1072,7 +1072,46 @@ Esta condición determina $\theta$ salvo el signo, si $z$ está en el $1^\text{e
 $$ z=\underbrace{|z|}_{r}\underbrace{(\cos(\theta)+i\sin(\theta))}_{e^{i\theta}}$$
 \end{obs}
 
+\begin{teo} (Moiure)\\
+Si $z=|z|(\cos(\theta)+i\sin(\theta))$, $w=|w|(\cos(\alpha)+i\sin(\alpha))$
+$$ zw = |z||w|(\cos(\theta+\alpha)+i\sin(\theta+\alpha))$$
+\end{teo}
+\begin{demo}
+\begin{align*}
+zw &= |z|(\cos(\theta)+i\sin(\theta))|w|(\cos(\alpha)+i\sin(\alpha))\\
+   &= |z||w|\underbrace{\underbrace{(\cos(\theta)\cos(\alpha)-\sin(\theta)\sin(\alpha))}_{=\cos(\theta+\alpha)} + i\underbrace{(\cos(\theta)\sin(\alpha)+\sin(\theta)\cos(\alpha))}_{=\sin(\theta+\alpha)}}_{=e^{i(\theta+\alpha)}}
+\end{align*}
+\end{demo}
 
+\begin{obs} (Leyes de moiure) Si $z,w\in{\mathbb{C}}$
+
+$$ z=re^{i\theta} \quad w = se^{i\alpha} $$
+$$ zw = rse^{i(\alpha+\theta)} \quad z^n = r^n e^{in\theta} $$
+\end{obs}
+
+\begin{obs}
+si $z=re^{i\theta}, \overline{z}=re^{-i\theta}$
+$$ z^{-1} = \frac{\overline{z}}{|z|^2} = \frac{re^{-i\theta}}{r^2} = \frac{e^{-i\theta}}{r}$$
+\end{obs}
+
+\section{Raices $n$-ésimas de números complejos}
+
+Si $a\in{\mathbb{R}}\geq{0}$, si buscamos las "raices cuadradas" de $a$, o sea $b\in{\mathbb{R}}\; b^2=a$ son dos las soluciones excepto $a=0, \pm\sqrt{a}$
+
+Si $a<0$ no hay ninguno. Sin embarg, si busco $b\in{\mathbb{C}}\; b^2=a$ tiene dos soluciones $\pm i\sqrt{|a|}$.
+
+\begin{teo} Si $w\in{\mathbb{C}}, w\neq{0} n\in{\mathbb{N}}$, hay exactamente $n$ valores complejos $z$ tales que $z^n = w$. Están dados por:
+
+$$ w=re^{i\theta}m \quad z_j=r^{\frac{1}{n}}e^{i\left(\frac{\theta}{n} + \frac{2\pi j}{n}\right)}$$
+\end{teo}
+
+\begin{demo}
+si $z=se^{i\alpha}$, $z^n=s^ne^{in\alpha}=re^{i\theta}$
+$$\implies s^n = r \implies s=r^{\frac{1}{n}}$$
+$$ n\alpha = \theta + 2\pi j \implies \alpha = \frac{\theta}{n} + \frac{2\pi j}{n}$$
+
+Son todos distintos si $j=0, i^n, n-1$ (despues se repiten en un ciclo)
+\end{demo}
 
 \part{Grafos}
 
