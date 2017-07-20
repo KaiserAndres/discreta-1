@@ -25,6 +25,8 @@
 \DeclareMathOperator{\mcd}{mcd}
 \DeclareMathOperator{\mcm}{mcm}
 \DeclareMathOperator{\sig}{signo}
+\DeclareMathOperator{\re}{Re}
+\DeclareMathOperator{\im}{Im}
 
 \newcommand{\modu}[1]{\quad(\text{mód }#1)}
 \begin{document}
@@ -968,6 +970,109 @@ $$q=\frac{r(b-a)}{\mcd(m,n)} + \frac{n}{\mcd(m,n)}$$
 \end{demo}
 
 \part{Números Complejos}
+
+\begin{defi} El conjunto de los números complejos es el plano real $\mathbb{R}^2$ con las siguientes operaciónes:
+\begin{itemize}
+\item {\bfseries suma}: Como voctores, osea la soma es coordenada, coordenada
+\item {\bfseries Producto}: El eje $x$ lo identificamos con $\mathbb{R}$ (con las operaciones de $\mathbb{R}$) en particular $(a,0)(a,0)=(ab,0)$ 
+\end{itemize}
+\end{defi}
+
+\begin{defi} Notación: El vector $(a,b)$ lo notamos como $a+bi = a1+bi$\end{defi}
+
+\begin{defi} Propiedad distributiva en $\mathbb{C}$
+$$(a+bi)(c+di) = ac + adi + bci + bdi^2 = (ac-bd)+(ad+bc)i$$
+\end{defi}
+
+Con estas definiciones $(\mathbb{C}, +, *)$ es cuerpo.\\
+La notación $Z=a+bi$ la llamamos {\itshape cartesiana} o {\itshape binomial}.\\
+El valor "$a$" (la primera coordenada de $\mathbb{Z}$) se llama la parte {\bfseries real} de $Z$ (denotada $\re(Z)$), mientras que "$b$" es la parte imaginaria de $Z$ (denotada $\im(Z)$)
+
+\begin{defi} Definimos la función conjugación:
+\begin{align*}
+\mathbb{C} &\to \mathbb{C}\\
+Z &\to \overline{Z}\\
+a+bi &\to a-bi\\
+(a,b) &\to (a,-b)
+\end{align*}
+\end{defi}
+
+\begin{defi} si $Z\in{\mathbb{C}}$, definimos su valor absoluto (lo que se mide) como
+$$|Z| = \sqrt{a^2+b^2}$$
+\end{defi}
+
+\begin{teo} si $Z\in\mathbb{C}$
+$$Z \overline{Z} = a^2+b^2$$
+\end{teo}
+
+\begin{demo}
+\begin{align*}
+Z\overline{Z} &= (a+bi)(a-bi)\\
+              &= a^2-abi+abi-b^2i^2\\
+	      &= a^2+b^2
+\end{align*}
+\end{demo}
+
+Valen las siguientes propiedades:
+
+\begin{teo} $\overline{z+w} = \overline{z} + \overline{w}$\end{teo}
+
+\begin{teo} $\overline{zw} = \overline{z}\;\overline{w}$\end{teo}
+
+\begin{teo} $z=\overline{z} \iff z\in{\mathbb{R}}$\end{teo}
+
+\begin{teo} $z\overline{z}=|z|^2$\end{teo}
+
+\begin{teo} $z+\overline{z} = 2\re(z)$\end{teo}
+
+\begin{teo} $z-\overline{z} = 2\im(z)$\end{teo}
+
+\begin{teo} $|zw| ) |z|\;|w|$\end{teo}
+
+\begin{teo} $|z+w| \leq |z|+|w|$\end{teo} 
+
+\begin{teo} $|z| = 0 \iff z=0$\end{teo}
+
+% TODO: demostrar esto :V
+
+\begin{obs}
+La forma binomial de representar los números complejos es muy util para suar números complesjos, pero no para multiplicarlos.
+\end{obs}
+
+\begin{defi} {\bfseries Forma polar}:\\
+Si $z=0\implies$ lo determinamos univocamente\\
+Cualquier punto queda univocamente determinado por $\theta$ (la inclinación o ángulo) y su longitud.
+\end{defi}
+
+\begin{obs}
+El ángulo lo mediamos en radianes con respecto a $x$, el mismo esta univocamente determinado, sino vale múltiplos de $2\pi$.
+\end{obs}
+
+En general para tener unicidad del ángulo, lo tomamos en $[0, 2\pi)$.
+
+Si $z\in{\mathbb{C}}, z\neq{0}$
+
+$$ z= \underbrace{|z|}_{r} \underbrace{\frac{z}{|z|}}_\text{Tiene valor absoluto 1} \quad \left|\frac{z}{|z|}\right| = \frac{|z|}{||z||} = 1$$
+
+\[
+\left.
+\begin{align*}
+\sin(\theta) &= \im\left(\frac{z}{|z|}\right)\\
+\cos(\theta) &= \re\left(\frac{z}{|z|}\right)
+\end{align*}
+\right\}
+(r,\theta) \to r(\cos(\theta) + i\sin(\theta))
+\]
+
+Al revés, dado $Z=a+bi$, ¿como calcular $(r,\theta)$? \\
+$r=|Z|$, para calcular $\theta,\; \cos(\theta)=\frac{z}{|z|}$ \\
+Esta condición determina $\theta$ salvo el signo, si $z$ está en el $1^\text{er}$ o $2^\text{do}$ cuadrante, $\theta=\arccos\left(\frac{z}{|z|}\right)$, sino $\theta=-\arccos\left(\frac{z}{|z|}\right)$
+
+\begin{obs} Es posible escribir un numero complejo usando notación de Eueler:
+$$ z=\underbrace{|z|}_{r}\underbrace{(\cos(\theta)+i\sin(\theta))}_{e^{i\theta}}$$
+\end{obs}
+
+
 
 \part{Grafos}
 
